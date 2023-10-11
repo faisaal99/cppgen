@@ -2,7 +2,6 @@
 
 #include <cstdint>
 #include <cstddef>
-#include <string>
 
 
 typedef uint8_t u8;
@@ -22,9 +21,8 @@ typedef size_t usz;
 typedef float  f32;
 typedef double f64;
 
-typedef char const *cstr;
-
-typedef std::string String;
-
 
 #define local static
+#define loop while(1)
+#define NL "\n"
+#define NLC '\n'

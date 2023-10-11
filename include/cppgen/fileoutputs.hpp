@@ -3,13 +3,12 @@
 #include <typedef.hpp>
 
 
-local cstr
+local char const*
 g_TYPEDEF_HPP{
-  R"(#pragma once
+R"(#pragma once
 
 #include <cstdint>
 #include <cstddef>
-#include <string>
 
 
 typedef uint8_t u8;
@@ -29,34 +28,41 @@ typedef size_t usz;
 typedef float  f32;
 typedef double f64;
 
-typedef char const *cstr;
-
-typedef std::string String;
-
 
 #define local static
+#define loop while(1)
+#define NL "\n"
+#define NLC '\n'
 )"
 };
 
-local cstr
+
+local char const*
 g_CONTAINERDEF_HPP{
 R"(#pragma once
 
 #include <vector>
 #include <memory>
 #include <stack>
+#include <string>
 
 
 template <typename T>
 using Vec = std::vector<T>;
 
 template <typename T>
-using Unq = std::unique_ptr<T>;
+using Box = std::unique_ptr<T>;
 
 template <typename T>
 using Rc = std::shared_ptr<T>;
 
 template <typename T>
+using Weak = std::weak_ptr<T>;
+
+template <typename T>
 using Stack = std::stack<T>;
+
+
+typedef std::string String;
 )"
 };

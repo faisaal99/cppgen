@@ -6,13 +6,16 @@ set(CXX_STANDARD 20)
 set(CXX_STANDARD_REQUIRED True)
 
 include_directories(
-    "include"
+    ${PROJECT_SOURCE_DIR}/include,
+    ${PROJECT_SOURCE_DIR}/src
 )
 
-set(
+file(
+    GLOB_RECURSE
+
     SOURCES
 
-    src/main.cpp
+    **.cpp
 )
 
 add_executable(

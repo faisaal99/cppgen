@@ -1,14 +1,16 @@
-#include <cppgen/fileoutputs.hpp>
-#include <cppgen/util_messages.hpp>
-
-#include <typedef.hpp>
-
 #include <iostream>
 #include <fstream>
 
+#include "cppgen/fileoutputs.hpp"
+#include "cppgen/util_messages.hpp"
 
-#define DEBUG 0
-#define STR_EQ(str1, str2) (std::strcmp(str1, str2) == 0)
+#define DEBUG 1
+#include "debug/print.hpp"
+
+#include "typedef.hpp"
+
+
+#define STREQ(str1, str2) (std::strcmp(str1, str2) == 0)
 
 
 void
@@ -53,9 +55,9 @@ main(
   #endif
 
   for (i32 i{ 1 }; i < argc; i++) {
-    if (STR_EQ(argv[i], "tdef"))
+    if (STREQ(argv[i], "tdef"))
       generate_tdef = true;
-    else if (STR_EQ(argv[i], "cdef"))
+    else if (STREQ(argv[i], "cdef"))
       generate_cdef = true;
   }
 
